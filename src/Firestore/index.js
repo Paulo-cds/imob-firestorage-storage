@@ -1,27 +1,28 @@
 import './FirestoreStyle.scss';
 import Card from '../Components/Card'
 import Form from '../Components/Form'
-
+import { useNavigate } from "react-router-dom"
 //import { collection, doc, setDoc } from "firebase/firestore"
 import React,{useState} from 'react'
-import {db} from '../firestore'
+import {db} from '../firestore.js'
 //import { getFirestore, collection, getDoc } from "registerFirestore"
 
 
 //import * as firebase from "firebase/compat/app"
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore"
-import 'firebase/compat/auth'
+//import 'firebase/compat/auth'
 //import "firebase/compat/storage"
 
-require("firebase/firestore")
+
 
 
 function AddFirestore() {
   const [proprietarios, setProprietarios] = useState([])
   const [propId, setPropId] = useState([])
   const [controlForm, setControlForm]= useState(false)
-  const firebase = require("firebase")
+  let navigate = useNavigate()  
+  require("firebase/firestore")
 
 
   /******Função que adiciona proprietário******/
@@ -65,7 +66,10 @@ function AddFirestore() {
 
   return (
     <div className="App">
-      <h1>inicio</h1>
+      <div>
+        <button onClick={() => navigate(`/`)}>Home</button>
+        <button onClick={() => navigate(`/storage`)}>Storage</button>
+      </div>
       <div className='Buttons'>
         <button onClick={() => fetchProprietarios()}>Listar Proprietários</button>
         <button onClick={()=>{setControlForm(true)}}>Adicionar Proprietário</button>

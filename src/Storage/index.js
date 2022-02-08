@@ -3,7 +3,7 @@ import './getStorageStyle.scss'
 import firebase from "firebase/compat/app"
 //import * as firebase from "firebase/compat/app"
 import 'firebase/compat/auth'
-//import "firebase/storage"
+import "firebase/storage"
 import {
   getStorage,
   ref,
