@@ -1,0 +1,28 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  .Buttons {
+    margin: 20px auto;
+
+    button {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  }
+
+  .CardsClients {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .FormAdd {
+    width: 100%;
+  }
+}

@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  border: 1px solid rgb(78, 77, 77);
+  border-radius: 10px;
+  margin: 30px auto;
+  padding: 10px;
+
+  input {
+    width: 70%;
+    height: 1rem;
+    margin: 5px auto;
+  }
+
+  button {
+    width: 40%;
+    height: 1.7rem;
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    font-size: 75%;
+    transition-duration: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(5, 71, 102);
+      font-size: 95%;
+    }
+  }
+}
