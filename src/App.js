@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './Home'
 import Storage from './Storage'
 import Firestore from "./Firestore"
+import ListDataImage from "./ListDataImage"
 
 const App = () => {
   return(
@@ -10,6 +11,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="storage" element={<Storage />} />
         <Route path="firestore" element={<Firestore />} />
+        <Route path='ListData' element={<ListDataImage/>} />
       </Routes>
     </BrowserRouter>
   )

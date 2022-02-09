@@ -49,7 +49,7 @@ function AddFirestore() {
     data.docs.forEach(item=>{
       setProprietarios(prevState => [...prevState, item.data()])
       setPropId(prevState => [...prevState, item.id])
-    })    
+    })       
   }
 
   /******Função que faz o delete dos proprietários******/
@@ -69,6 +69,7 @@ function AddFirestore() {
       <div>
         <button onClick={() => navigate(`/`)}>Home</button>
         <button onClick={() => navigate(`/storage`)}>Storage</button>
+        <button onClick={() => navigate(`/ListData`)}>Lista Completa</button>
       </div>
       <div className='Buttons'>
         <button onClick={() => fetchProprietarios()}>Listar Proprietários</button>
