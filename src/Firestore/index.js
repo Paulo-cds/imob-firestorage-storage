@@ -3,7 +3,7 @@ import Card from '../Components/Card'
 import Form from '../Components/Form'
 import { useNavigate } from "react-router-dom"
 //import { collection, doc, setDoc } from "firebase/firestore"
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import {db} from '../firestore.js'
 //import { getFirestore, collection, getDoc } from "registerFirestore"
 
@@ -43,14 +43,16 @@ function AddFirestore() {
   } 
 
   /******Função que faz o Get dos proprietários******/
-  const fetchProprietarios = async () => {    
+  const fetchProprietarios = async () => {       
     const response = db.collection('proprietarios')
     const data = await response.get()    
-    data.docs.forEach(item=>{
-      setProprietarios(prevState => [...prevState, item.data()])
+    data.docs.forEach(item =>{
+      setProprietarios(prevState => [...prevState, item.data()])      
       setPropId(prevState => [...prevState, item.id])
-    })       
+    })         
   }
+  
+
 
   /******Função que faz o delete dos proprietários******/
   const handleDelete = (id) => {
