@@ -14,16 +14,12 @@ import "firebase/compat/firestore"
 //import 'firebase/compat/auth'
 //import "firebase/compat/storage"
 
-
-
-
 function AddFirestore() {
   const [proprietarios, setProprietarios] = useState([])
   const [propId, setPropId] = useState([])
   const [controlForm, setControlForm]= useState(false)
   let navigate = useNavigate()  
   require("firebase/firestore")
-
 
   /******Função que adiciona proprietário******/
   const addProp = async (form) => {
@@ -63,7 +59,6 @@ function AddFirestore() {
     .catch((err) => console.log(err))
   }
   
-
   return (
     <div className="App">
       <div>
