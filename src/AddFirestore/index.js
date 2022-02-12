@@ -14,9 +14,6 @@ import "firebase/compat/firestore"
 //import 'firebase/compat/auth'
 //import "firebase/compat/storage"
 
-
-
-
 function AddFirestore() {
   const [proprietarios, setProprietarios] = useState([])
   const [propId, setPropId] = useState([])
@@ -24,16 +21,15 @@ function AddFirestore() {
   let navigate = useNavigate()  
   require("firebase/firestore")
 
-
   /******Função que adiciona proprietário******/
   const addProp = async (form) => {
     
     await db.collection("proprietarios").doc().set(
       {
-        nome: form.nome.value,
-        email: form.email.value,
-        telefone: form.telefone.value,
-        endereco: form.endereco.value
+        proprietario: form.proprietario.value,
+        inquilino: form.inquilino.value,
+        imovel: form.imovel.value,
+        contrato: form.contrato.value
       }
     ).then(() => {
       console.log("Incluido com sucesso")
@@ -65,7 +61,6 @@ function AddFirestore() {
     .catch((err) => console.log(err))
   }
   
-
   return (
     <div className="App">
       <div>
@@ -82,10 +77,10 @@ function AddFirestore() {
           proprietarios &&
           proprietarios.map((proprietario, index) => (            
             <Card
-              nome={proprietario.nome}
-              email={proprietario.email}
-              telefone={proprietario.telefone}
-              endereco={proprietario.endereco}
+              proprietario={proprietario.proprietario}
+              inquilino={proprietario.inquilino}
+              imovel={proprietario.imovel}
+              contrato={proprietario.contrato}
               id={propId[index]}              
               handleDelete={handleDelete}
               key = {index}

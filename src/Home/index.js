@@ -9,6 +9,7 @@ const Home = () => {
             <button onClick={() => navigate(`storage`)}>Storage</button>
             <button onClick={() => navigate(`firestore`)}>Firestore</button>
             <button onClick={() => navigate(`/ListData`)}>Lista Completa</button>
+            <button onClick={() => navigate(`/grid`)}>Tabela</button>
         </div>
     )
 }

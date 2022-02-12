@@ -2,17 +2,22 @@ import './cardStyle.scss'
 
 const Card = (
     {
-        nome, email, telefone, endereco, id, handleDelete
+        proprietario, inquilino, imovel, contrato, id, handleDelete
     }
 ) => {    
     return(
         <div className='containerCard'>
-            <h3>Cliente</h3>
-            <p>Nome: {nome}</p>
-            <p>E-mail: {email}</p>
-            <p>Telefone: {telefone}</p>
-            <p>Endereço: {endereco}</p>
-            <p>ID: {id}</p>
+            <h3>Locação</h3>   
+            <hr width width={'70%'}/>         
+            <p>Proprietario: {proprietario}</p>
+            <hr width width={'70%'}/>
+            <p>Inquilino: {inquilino}</p>
+            <hr width width={'70%'}/>
+            <p>Imovel: {imovel}</p>
+            <hr width width={'70%'}/>
+            <p>Contrato: {contrato}</p>
+            <br/><br/>
+            {/* <p>ID: {id}</p> */}
             <button onClick={() => handleDelete(id)}>Delete</button>
         </div>
     )
