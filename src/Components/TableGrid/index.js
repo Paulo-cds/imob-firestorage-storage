@@ -21,30 +21,32 @@ export default function DataTable({data,columns}) {
 
   return (
     <div className='containerTable'>
-      <div style={{ height: 400, width: '90%' }}>
+      <div style={{ height: 600, width: '90%' }}>
         <DataGrid
           columns={columns}
-          pageSize={5}
+          pageSize={25}
           rowsPerPageOptions={[5]}
           checkboxSelection
           onRowClick={(e)=>handleSetCard(e)}
           rows={data.map((proprietario, index) => {
             return {
               id: index,
+              contrato: proprietario.contrato,
               proprietario: proprietario.proprietario,
               inquilino: proprietario.inquilino,
               imovel: proprietario.imovel,
-              contrato: proprietario.contrato,
+              endereco: proprietario.endereco,
             }
           })}        
         />
       </div>
       <div className='Card' style={{display : cardComplet ? 'flex' : 'none'}}>
         <Card
+          contrato={itemsCard.contrato}
           proprietario={itemsCard.proprietario}
           inquilino={itemsCard.inquilino}
           imovel={itemsCard.imovel}
-          contrato={itemsCard.contrato}
+          endereco={itemsCard.endereco}
           // id={propId[index]}              
           //handleDelete={handleDelete}
           // key = {index}

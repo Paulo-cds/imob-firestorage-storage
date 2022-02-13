@@ -32,7 +32,7 @@ function AddFirestore() {
         contrato: form.contrato.value
       }
     ).then(() => {
-      console.log("Incluido com sucesso")
+      console.log("Incluído com sucesso")
       setControlForm(false)
     })
     .catch((err) => {console.log(err)})
@@ -77,10 +77,11 @@ function AddFirestore() {
           proprietarios &&
           proprietarios.map((proprietario, index) => (            
             <Card
+              contrato={proprietario.contrato}
               proprietario={proprietario.proprietario}
               inquilino={proprietario.inquilino}
               imovel={proprietario.imovel}
-              contrato={proprietario.contrato}
+              endereco={proprietario.endereco}
               id={propId[index]}              
               handleDelete={handleDelete}
               key = {index}

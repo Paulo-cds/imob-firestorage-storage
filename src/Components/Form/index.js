@@ -5,10 +5,11 @@ import './formStyle.scss'
 
 const Form = ({submit}) => {
     const [form, setForm] = useState({
+        contrato: String,
         proprietario: String,
-        inquilino: String,
+        inquilino: String, 
         imovel: String,
-        contrato: String
+        endereco: String,
     })    
 
     const handleForm = (e) => {
@@ -28,10 +29,11 @@ const Form = ({submit}) => {
     }
     return(
         <form onSubmit={(e)=>handleSubmit(e)} className='form'>
-          <input type='string' name='proprietario' placeholder='Proprietario:' onChange={handleForm}/>
-          <input type='string' name='inquilino' placeholder='Inquilino:' onChange={handleForm}/>
-          <input type='string' name='imovel' placeholder='Imovel:' onChange={handleForm}/>
           <input type='string' name='contrato' placeholder='Contrato:' onChange={handleForm}/>
+          <input type='string' name='proprietario' placeholder='Proprietário:' onChange={handleForm}/>
+          <input type='string' name='inquilino' placeholder='Inquilino:' onChange={handleForm}/>
+          <input type='string' name='imovel' placeholder='Imóvel:' onChange={handleForm}/>
+          <input type='string' name='endereco' placeholder='Endereço:' onChange={handleForm}/>
           <button>Cadastrar</button>
         </form>
     )
