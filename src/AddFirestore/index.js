@@ -26,13 +26,14 @@ function AddFirestore() {
     
     await db.collection("proprietarios").doc().set(
       {
+        contrato: form.contrato.value,
         proprietario: form.proprietario.value,
         inquilino: form.inquilino.value,
         imovel: form.imovel.value,
-        contrato: form.contrato.value
+        endereco: form.endereco.value
       }
     ).then(() => {
-      console.log("Incluido com sucesso")
+      console.log("Incluído com sucesso")
       setControlForm(false)
     })
     .catch((err) => {console.log(err)})
@@ -77,10 +78,11 @@ function AddFirestore() {
           proprietarios &&
           proprietarios.map((proprietario, index) => (            
             <Card
+              contrato={proprietario.contrato}
               proprietario={proprietario.proprietario}
               inquilino={proprietario.inquilino}
               imovel={proprietario.imovel}
-              contrato={proprietario.contrato}
+              endereco={proprietario.endereco}
               id={propId[index]}              
               handleDelete={handleDelete}
               key = {index}

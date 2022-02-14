@@ -6,11 +6,13 @@ import {useEffect, useState} from 'react'
 const Grid = () => {
 const [proprietarios, setProprietarios] = useState([])
 
+// disposição das colunas da grid
 const columns = [
-  { field: 'proprietario', headerName: 'Proprietario', width: 130 },
-  { field: 'inquilino', headerName: 'Inquilino', width: 200 },
-  { field: 'imovel', headerName: 'Imovel', width: 130 },
-  { field: 'contrato', headerName: 'Contrato', width: 250 },
+  { field: 'contrato', headerName: 'Contrato', width: 130 },
+  { field: 'proprietario', headerName: 'Proprietário', width: 130 },
+  { field: 'inquilino', headerName: 'Inquilino', width: 200 }, 
+  { field: 'imovel', headerName: 'Imóvel', width: 130 },
+  { field: 'endereco', headerName: 'Endereço', width: 400 }, 
 ];  
 
   useEffect(() => {
