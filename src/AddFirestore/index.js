@@ -26,10 +26,11 @@ function AddFirestore() {
     
     await db.collection("proprietarios").doc().set(
       {
+        contrato: form.contrato.value,
         proprietario: form.proprietario.value,
         inquilino: form.inquilino.value,
         imovel: form.imovel.value,
-        contrato: form.contrato.value
+        endereco: form.endereco.value
       }
     ).then(() => {
       console.log("Incluído com sucesso")
