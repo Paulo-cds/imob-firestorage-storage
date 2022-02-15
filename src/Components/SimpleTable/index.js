@@ -22,20 +22,20 @@ export default function DenseTable({manutencoes}) {
           </TableRow>
         </TableHead>
         <TableBody>
-            {manutencoes.map((manutencao) => (
-                manutencao.mes.map((descricao, index) => (
-                    <TableRow
-                        key={index}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                        <TableCell align="center" component="th" scope="row">
-                            {descricao.data}
-                        </TableCell>
-                        <TableCell align="center">{descricao.descricao}</TableCell>
-                        <TableCell align="center">{descricao.valor}</TableCell>
-                        <TableCell align="center">{descricao.responsavel}</TableCell>                        
-                    </TableRow>
-                ))
+            {manutencoes.map((manutencao, index) => (
+                
+              <TableRow
+                  key={index}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                  <TableCell align="center" component="th" scope="row">
+                      {manutencao.data}
+                  </TableCell>
+                  <TableCell align="center">{manutencao.descricao}</TableCell>
+                  <TableCell align="center">{manutencao.valor}</TableCell>
+                  <TableCell align="center">{manutencao.responsavel}</TableCell>                        
+              </TableRow>
+                
             ))}
         </TableBody>
       </Table>

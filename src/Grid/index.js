@@ -1,6 +1,7 @@
 import DataTable from '../Components/TableGrid'
 import {db} from '../firestore.js'
 import {useEffect, useState} from 'react'
+import './styleGrid.scss'
 
 // component grid with firebase data
 const Grid = () => {
@@ -29,9 +30,9 @@ const columns = [
   }, [])  
 
   return (
-    <>
+    <div className='table'>
       <DataTable data={proprietarios} propId={propId} columns={columns}/>
-    </>    
+    </div>    
   )
 }
 

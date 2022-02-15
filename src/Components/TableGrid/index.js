@@ -22,7 +22,7 @@ export default function DataTable({data,propId, columns}) {
 
   return (
     <div className='containerTable'>
-      <div style={{ height: 600, width: '90%' }}>
+      <div className='dataGrid'>
         <DataGrid
           columns={columns}
           pageSize={25}
